@@ -60,6 +60,7 @@ export default {
         margin-top: 5vh;
         height: 40%;
         text-align: center;
+        max-height: 23%;
         
     }
 
