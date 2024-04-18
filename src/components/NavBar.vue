@@ -1,49 +1,41 @@
 <template>
   <v-toolbar height="80" color="#ffffff" :elevation="5">
-      <v-toolbar-title class="text-h5"><strong style="color: #D80000;">ECG</strong><span style="color: #763B3B;"> ONLINE</span></v-toolbar-title>
+    <v-toolbar-title class="text-h5">
+      <strong style="color: #D80000;">ECG</strong><span style="color: #763B3B;"> ONLINE</span>
+    </v-toolbar-title>
 
-      <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
 
-      <v-toolbar-items class="hidden-sm-and-down ">
-          <v-btn v-for="item in menu" :key="item.icon" :to="item.link" flat color="#763B3B">{{ item.title }}</v-btn>
-      </v-toolbar-items>
-
-      <!-- PARA CELULAR
-
-    <v-menu class="hidden-md-and-up">
-      <v-toolbar-side-icon slot="activator"></v-toolbar-side-icon>
-      <v-list>
-        <v-list-tile v-for="item in menu" :key="item.icon">
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-           </v-list-tile-content>
-        </v-list-tile>   
-      </v-list>
-    </v-menu> 
-  
-  -->
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn @click="scrollToElement('inicio')" flat color="#763B3B">Inicio</v-btn>
+      <v-btn @click="scrollToElement('telemedicina')" flat color="#763B3B">Telemedicina</v-btn>
+      <v-btn @click="scrollToElement('equipe')" flat color="#763B3B">Equipe</v-btn>
+      <v-btn @click="scrollToElement('modalidades')" flat color="#763B3B">Modalidades</v-btn>
+    </v-toolbar-items>
 
   </v-toolbar>
 </template>
 
-<script setup>
+<script>
 
-import { ref } from 'vue';
-
-const menu = ref([
-  { icon: 'home', title: 'Inicio', link: '/inicio' },
-  { icon: 'info', title: 'Telemedicina', link: '/telemedicina' },
-  { icon: 'warning', title: 'Equipe', link: '/equipe' },
-  { icon: 'warning', title: 'Modalidades', link: '/modalidades' }
-]);
-
+export default {
+  methods: {
+    scrollToElement(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        const topOffset = element.getBoundingClientRect().top;
+        window.scrollBy({ top: topOffset - 200, behavior: 'smooth' });
+      }
+    }
+  }
+};
 </script>
 
 <style scoped>
-
-.font-nave{
-font-size: x-large;
+.font-nave {
+  font-size: x-large;
 }
+
 .v-toolbar-title {
   color: #D80000
 }

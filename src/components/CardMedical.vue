@@ -1,14 +1,15 @@
-<template>
-    <div class="background-custom">
+<template >
+    <div id="equipe" class="background-custom">
         <div class="custom-text">
             <h1 style="color: #dc4949; font-weight: bolder; font-size: 30px; margin-bottom: 1vh;">CONHEÇA NOSSOS MÉDICOS:</h1>
             <h3 style="color: #503636; font-weight: 300; font-size: 16px;">Vamos além do convencional e apresentamos nossa equipe, onde a excelência é padrão.</h3>
+            <h3 style="color: #503636; font-weight: 300; font-size: 16px;">(Clique no <strong>Card</strong> para entrar em contato.)</h3>
         </div>
 
-        <div>
+        <div data-aos="fade-down" data-aos-delay="100">
             <v-row class="justify-center align-center">
                 <v-col class="custom-col" cols="12" sm="3">
-                    <v-card class="custom-card" width="350" height="500" rounded="xl">
+                    <v-card class="custom-card" href="https://google.com.br" width="350" height="500" rounded="xl">
 
                         <v-avatar size="150" style="margin-top: 2vh; background-color: white;" >
                             <v-img src="../assets/drgui.png" alt="Dr. Guilherme Mendes Chaves" style="width: 100%; height: 100%; object-fit: cover; object-position: 10% 100%;"></v-img>
@@ -27,7 +28,7 @@
                 </v-col>
 
                 <v-col class="custom-col" cols="12" sm="2">
-                    <v-card class="custom-card" width="350" height="500" rounded="xl">
+                    <v-card class="custom-card" href="https://google.com.br" width="350" height="500" rounded="xl">
                         <v-avatar size="150" style="margin-top: 2vh;" >
                             <v-img src="../assets/drjao.jpg" alt="Dr. João Antônio" style="width: 100%; height: 100%; object-fit: cover; object-position: 10% 100%;"></v-img>
                         </v-avatar>
@@ -47,11 +48,17 @@
         </div>
     </div>
 </template>
-<script >
-export default {
-    
-}
+
+<script setup>
+
+import { onMounted } from 'vue';
+    import AOS from "aos";
+
+    onMounted(async () =>{
+        AOS.init();
+    })
 </script>
+
 <style scoped>
 
     .background-custom{

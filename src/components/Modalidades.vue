@@ -1,5 +1,5 @@
 <template>
-    <div class="custom-background-modal">
+    <div id="modalidades" class="custom-background-modal">
 
         <div class="custom-titulo">
             <h1 style="padding-top: 5vh;">Conheça as modalidades de exames que realizamos para Telemedicina</h1>
@@ -9,7 +9,7 @@
         <div class="custom-div-text">
             <v-container >
                 <v-row class="justify-center align-center">
-                    <v-col cols="12" sm="7">
+                    <v-col data-aos="fade-left" cols="12" sm="7">
                         <v-card class="custom-card-modal" rounded="lg">
                             <v-row no-gutters>
                                 <v-col class="custom-right-div" cols="6">
@@ -24,7 +24,7 @@
                         </v-card>
                     </v-col>
 
-                    <v-col cols="12" sm="7">
+                    <v-col data-aos="fade-right" cols="12" sm="7">
                         <v-card class="custom-card-modal" rounded="lg">
                             <v-row no-gutters>
 
@@ -46,7 +46,7 @@
                         </v-card>
                     </v-col>
 
-                    <v-col cols="12" sm="7">
+                    <v-col data-aos="fade-left" cols="12" sm="7">
                         <v-card class="custom-card-modal" rounded="lg">
                             <v-row no-gutters>
                                 <v-col class="custom-right-div" cols="6">
@@ -66,10 +66,16 @@
 
     </div>
 </template>
-<script>
-export default {
 
-}
+<script setup>
+
+    import { onMounted } from 'vue';
+    import AOS from "aos";
+
+    onMounted(async () =>{
+        AOS.init();
+    })
+
 </script>
 
 <style scoped>
@@ -83,7 +89,7 @@ export default {
 }
 .custom-titulo{
     font-family: "Inter", sans-serif;
-    font-weight: lighter;
+    font-weight: bolder;
     color: white;
     margin: 0 auto;
     text-align: center;

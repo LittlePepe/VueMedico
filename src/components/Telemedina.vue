@@ -1,7 +1,7 @@
 <template>
-    <div class="custom-text">
+    <div id="telemedicina" data-aos="fade-down" data-aos-delay="100" class="custom-text">
         <h1 class="custom-font" style="color: #763B3B; margin-bottom: 4vh;">Telemedicina</h1>
-        <h3 class="custom-font">Você já ouviu falar de um sistema de Telemedicina? Atualmente, este termo é usado para
+        <h3 class="custom-font" style="text-align: center;">Você já ouviu falar de um sistema de Telemedicina? Atualmente, este termo é usado para
             definir um sistema on-line de troca de informações médicas e análise de resultados de diferentes exames.
             Estes exames são avaliados e entregues de forma digital, dando apoio para a medicina tradicional e
             funcionando de forma mais rápida e eficaz. Quer conhecer mais sobre o que é Telemedicina?</h3>
@@ -10,10 +10,14 @@
     </div>
 </template>
 
-<script>
-export default {
+<script setup>
 
-}
+import { onMounted } from 'vue';
+    import AOS from "aos";
+
+    onMounted(async () =>{
+        AOS.init();
+    })
 </script>
 
 <style scoped>
@@ -34,10 +38,11 @@ export default {
 }
 
 .vertical-line {
-  height: 40px; 
+  height: 100px; 
   width: 2px; 
   background-color: #AE1613;
   margin: 0 auto; 
   margin-top: 7vh;
+  margin-bottom: 12vh;
 }
 </style>
